@@ -17,11 +17,16 @@
         color: white;
         padding: 2px;
         text-align: center;
+        width:auto;
     }
 
     #mapBtns {
         margin-left: 500px;
         margin-top: -300px;
+    }
+
+    .box {
+        width: 500px;
     }
 </style>
 <script>
@@ -66,12 +71,12 @@
     }
 </script>
 
-<div class="row container">
+<div class="row container box">
     @*<div class="col-1-1">
             <h3 style="background: orange!important;">You must join a topic to see posts</h3>
         </div>*@
     <div class="col-1-2">
-        <h3 style="background:orange!important ;">Quick Links</h3>
+        <h3 style="background:green ;">Student Info</h3>
         <div class="col-1-2">
             <ul>
                 <li>
@@ -105,10 +110,10 @@
             </ul>
         </div>
     </div>
-    <div class="col-2-2">
+    @*<div class="col-2-2">
         <h3 style="background:green ;">Student Account</h3>
 
-    </div>
+    </div>*@
 
     <div id="map" class="col-1-1"></div>
     <div id="mapBtns" class="col-2-2">

@@ -4,12 +4,7 @@
 <style>
     .wrapper {
         display: flex;
-        /*align-items: stretch;
-            perspective: 1500px;*/
     }
-
-
-
     #top {
         background-color: #2574A9;
         font-family: 'Segoe UI';
@@ -19,7 +14,6 @@
         border-radius: .50rem;
         align-content: center;
     }
-
     #services ul {
         display: block;
         float: right;
@@ -29,44 +23,28 @@
         padding-left: 9px;
         margin: 4px;
     }
-
     .addBtn {
         background-color: #539C15
     }
-
     .post {
         color: #000000;
         background-color: #ADD8E6;
         width: 498px;
         height: 75px;
         display: inline-block;
-        /*display: flex;*/
         position: inherit;
-        /*padding-bottom: 3px;
-        padding-top: 3px;*/
         padding-right: 6px;
         padding-left: 6px;
         border: 1px solid #2574A9;
-        /*#6BA3A3;*/
         border-radius: 4px;
         list-style: none;
-        /*padding:0px;*/
-        /*cursor: grab;*/
-        /*overflow: auto;*/
     }
-
     .sidebar {
-        /*width:50px;*/
         float: left;
-        /*height:500px;
-        padding-left:50px;*/
     }
-
     .align {
-        /*border: 1px solid #2574A9;*/
         height: 1000px;
         background-color: cornflowerblue;
-        /*padding-left: 2px;*/
         margin-left: 15px;
         margin-right: 15px;
         margin-bottom: 20px;
@@ -74,103 +52,64 @@
         display: block;
         float: left;
         width: 500px;
-        /*float: inherit;
-        width: 230px;
-        padding-top: 6px;*/
-        /*padding-right: 20px;
-        padding-left: 9px;*/
-        /*padding-top: 6px;*/
-        /*padding-right: 20px;
-        padding-left: 9px;*/
     }
-
     #servicesContainer {
         padding-left: 0px;
         display: block;
         float: inherit;
         width: 230px;
         padding-top: 3px;
-        /*padding-right: 20px;
-        padding-left: 9px;*/
         margin: 1px;
     }
-    /*.card:active {
-            cursor: grabbing;
-        }*/
-    /*for text on card  --> to make grey*/
-    /*p {
-            color: #999;
-        }*/
     .post h4 {
         border-bottom: 1px dotted #6BA3A3;
         border-top: 1px dotted #6BA3A3;
         font-weight: 600;
     }
-    /*edit and delete 'buttons'*/
     .post a {
         background-color: #F6F6F6;
     }
-
     .post button {
         background-color: #F6F6F6;
     }
-
     .glyphicon {
         padding-top: 5px;
     }
-
     .row1 {
         height: 20px;
         padding-bottom: 35px;
     }
-
-    #trash {
-        padding: 1px;
-        height: 30px;
-        width: 30px;
-        margin-bottom: 4px;
-    }
-
-    #pencil, #vote {
-        padding: 1px;
-        height: 30px;
-        width: 30px;
-    }
-
     #col0 {
-        /*padding-left: 40px;*/
         padding-right: 144px;
         height: 30px;
         width: 205px;
     }
-
     #col1 {
         padding-right: 0px;
         padding-left: 20px;
         height: 30px;
         width: 150px;
-        /*margin-bottom: 4px;*/
     }
-
     #col2 {
         padding-right: 0px;
         padding-left: 20px;
         height: 50px;
         width: 300px;
-        /*margin-bottom: 4px;*/
     }
-
     #col3 {
         padding-right: 0px;
         padding-left: 20px;
         height: 50px;
         width: 300px;
         margin-top: 25px;
-        /*margin-bottom: 4px;*/
     }
-
     .header {
         padding-left: 50px;
+    }
+
+    #partial {
+        float:right;
+        margin-top: -200px;
     }
 </style>
 <body>
@@ -180,17 +119,13 @@
         <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
         <script src="~/signalr/hubs"></script>
         <script>
-
-
             function addPostHtml(shapeModel) {
                 var postHtml = ` <li class="post" id=${shapeModel.Id}>
-                                                                                    <h3 id="cardid" style="display:none">${shapeModel.Id}</h3>
-                                                                                    <h4 id="name"> ${shapeModel.Name}</h4>
-                                                                                    <p id="post">${shapeModel.Post}</p>
-                                                                                    </div>
-
-
-                                                                                  </li>`;
+                                         <h3 id="cardid" style="display:none">${shapeModel.Id}</h3>
+                                         <h4 id="name"> ${shapeModel.Name}</h4>
+                                         <p id="post">${shapeModel.Post}</p>
+                                         </div>
+                                         </li>`;
                 $("#servicesContainer").append(postHtml);
             }
 
@@ -249,7 +184,7 @@
             </div>
 
             <ul id="servicesContainer"></ul>
-
         </form>
     </div>
+   <div id="partial">@Html.Partial("_InfoPage");</div>
 </body>
